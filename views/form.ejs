@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang = 'en'>
+
+<head>
+
+    <%- include("./partials/head.ejs") %>
+
+    <style>
+
+        #body{
+
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 70px;
+            gap:40px;
+        }
+
+        #sidenav{
+
+            display:flex;
+            flex-direction: column;
+            width: 100px;
+            padding: 5px;
+            border-right: 2px solid black;
+        }
+
+        #survey{
+
+            width: 80%;
+            flex:1;
+            
+        }
+
+        #nav2 {
+
+            display: flex;
+            width:100%;
+            justify-content: space-evenly;
+            align-self: top;
+            border-bottom: 2px solid black;
+            padding-bottom: 5px;
+
+
+        }
+
+        #bottom {
+            display: flex;
+            flex:1;
+            width: 100%;
+            gap: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <%- include ("./partials/nav.ejs") %>
+    
+    <div id = "body">
+        <div id = "nav2">
+            <a> Page 1 </a>
+            <a> Page 2 </a>
+            <a> Page 3 </a>
+            <a> Page 4 </a>
+            <a> Page 5 </a>
+            <a> Page 6 </a>
+        </div>
+
+        <div id = "bottom">
+        <div id="sidenav">
+            <a> Next Page </a>
+            <a blocked> Previous Page</a>
+        </div>
+        <div id = "survey">
+
+            <form action = "/form" method = "post">
+                <label><b>Question1:</b>What University do you attend? </label><br>
+                <input type="text" placeholder="University" name = "university"> <br>
+                <label> <b>Question 2:</b>What motivates you? </label>
+                <div>
+                    <input type="radio" id="option1" name="motivation" value="passion">
+                    <label for="option1">Passion</label>
+                  </div>
+                
+                  <div>
+                    <input type="radio" id="option2" name="motivation" value="money">
+                    <label for="option2">Money</label>
+                  </div>
+                
+                  <div>
+                    <input type="radio" id="option3" name="motivation" value="career_growth">
+                    <label for="option3">Career Growth</label>
+                  </div>
+                
+                  <div>
+                    <input type="radio" id="option4" name="motivation" value="helping_others">
+                    <label for="option4">Helping Others</label>
+                  </div>
+                
+                  <!-- Add a submit button to complete the form -->
+                  <button type="submit">Submit</button>
+                </form>
+
+
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>

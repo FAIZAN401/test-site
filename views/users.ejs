@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <%- include("./partials/head.ejs") %>
+
+    <style>
+
+        div{
+
+            display:flex;
+            flex-direction: column ;
+            justify-content: space-around;
+            margin-top: 7%;
+        }
+
+        h3{
+
+            margin-left: 5%;
+        } 
+        ol{
+            margin-left: 6%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <%- include("./partials/nav.ejs")%>
+
+    <div>
+ <h3>Registered Users: </h3>
+
+<ol>
+    <% if (users.length > 0) { %>
+        <% users.forEach(user => { %>
+  
+          <li class = "fs-3"> Username: <%= user.Username %></li>
+  
+        <% }) %>
+      <% } else { %>
+        <p>There are no registered users...</p>
+      <% } %>
+</ol>
+    </div>
+</body>
+</html>
